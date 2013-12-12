@@ -13,25 +13,7 @@ Only one for now.
 ```
 Smite@Tank:~/dev> git clone --recursive https://github.com/erik-smit/sony-camera-api.git sony-camera-api
 Cloning into 'sony-camera-api'...
-remote: Counting objects: 4, done.
-remote: Compressing objects: 100% (4/4), done.
-remote: Total 4 (delta 0), reused 4 (delta 0)
-Unpacking objects: 100% (4/4), done.
-Submodule 'json2' (https://github.com/vi/json2.git) registered for path 'json2'
-Submodule 'resty' (https://github.com/micha/resty.git) registered for path 'resty'
-Cloning into 'json2'...
-remote: Counting objects: 29, done.
-remote: Compressing objects: 100% (18/18), done.
-remote: Total 29 (delta 10), reused 28 (delta 9)
-Unpacking objects: 100% (29/29), done.
-Submodule path 'json2': checked out 'b40b33d0ab761e0590c5dd0b5a1b54a45e7137ee'
-Cloning into 'resty'...
-remote: Counting objects: 631, done.
-remote: Compressing objects: 100% (460/460), done.
-remote: Total 631 (delta 305), reused 413 (delta 166)
-Receiving objects: 100% (631/631), 97.73 KiB, done.
-Resolving deltas: 100% (305/305), done.
-Submodule path 'resty': checked out '7e054f98d315923defe641ca06f1d7079b7a87c7'
+...
 Smite@Tank:~/dev> cd sony-camera-api/
 Smite@Tank:~/dev/sony-camera-api> . resty/resty
 Smite@Tank:~/dev/sony-camera-api> resty http://10.0.0.1:10000
