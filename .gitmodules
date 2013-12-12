@@ -1,0 +1,6 @@
+[submodule "json2"]
+	path = json2
+	url = https://github.com/vi/json2.git
+[submodule "resty"]
+	path = resty
+	url = https://github.com/micha/resty.git
