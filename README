@@ -10,7 +10,7 @@ Only one for now.
 
 ## Usage:
 
-````
+```
 Smite@Tank:~/dev> git clone --recursive https://github.com/erik-smit/sony-camera-api.git sony-camera-api
 Cloning into 'sony-camera-api'...
 remote: Counting objects: 4, done.
@@ -51,7 +51,7 @@ Response: {"id":1,"result":[{"dg":""}]}
 Smite@Tank:~/dev/sony-camera-api> POST /sony/camera '{"method":"setCameraFunction", "params":["Contents Transfer"], "id":1, "version":"1.0"}'
 {"id":1,"result":[0]}
 Smite@Tank:~/dev/sony-camera-api>
-````
+```
 
 Presto!
 
