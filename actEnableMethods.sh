@@ -1,12 +1,11 @@
 #!/bin/bash -e
 
-if [ -z "$1" ]; then
-  echo "Please provide URL to camera. Like:"
-  echo "  $0 http://10.0.0.1:10000"
+if [ -z "$_resty_host" ]; then
+  echo "Please set camera URL. Example:"
+  echo "  . resty/resty http://10.0.0.1:10000"
   exit
 fi
 . resty/resty -W 
-resty $1
 
 AEM=`echo '/version="1.0
 /params/0/developerID="
