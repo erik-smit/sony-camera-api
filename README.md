@@ -11,7 +11,7 @@ Only one for now.
 
 ## Usage:
 
-```
+``` sh
 # git clone --recursive https://github.com/erik-smit/sony-camera-api.git sony-camera-api
 Cloning into 'sony-camera-api'...
 ...
