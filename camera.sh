@@ -16,27 +16,31 @@ if [ -z "$1" ]; then
   exit
 fi;
 
+REQ='/version="1.0
+/method='$1'
+/id=1'
+
 INDEX=0
 for ARGUMENT in "${@:2}"
 do
   case $ARGUMENT in
-    {* ) 
-      PARAM="$2" ;;    
-    *[^a-zA-Z]* ) 
-      PARAM="\"$2";;   
+    "") 
+      PARAM='""';;   
+    ^[a-zA-Z]* ) 
+      PARAM="\"$ARGUMENT";;   
+    *) 
+      PARAM=$ARGUMENT;;
 #    *[^a-zA-Z0-9-]* ) echo "not ok : special character";exit;; 
   esac
-  PARAMS+=`printf "/params/%s=%s\n" "$INDEX" "$PARAM"`
+  printf -v PARAM "/params/%s=%s" "$INDEX" "$PARAM"
+  REQ+=$'\n'$PARAM
   INDEX=$[$INDEX +1]
 done
-if [ -z "$PARAMS" ]; then
-  PARAMS="/params=[]"
+if [ $INDEX == 0 ]; then
+  REQ+=$'\n'"/params=[]"
 fi
 
-RESP=`echo '/version="1.0
-'$PARAMS'
-/method='$1'
-/id=1' | json2/2json | tee kees | POST /sony/camera 2>&1`
+RESP=`echo "$REQ" | json2/2json | tee kees | POST /sony/camera 2>&1`
 if [ $VERBOSE ]; then
   echo "Request : `cat kees`"
   echo "Response: $RESP"
